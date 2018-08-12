@@ -30,19 +30,19 @@ public class HibernateConfigClass {
 	@Bean
 	public LocalSessionFactoryBean sessionFactory() {
 		LocalSessionFactoryBean sessionFactory = new LocalSessionFactoryBean();
-		sessionFactory.setDataSource(restDataSource());
-		sessionFactory.setPackagesToScan(new String[] { "com.chandrakanth." });
+		sessionFactory.setDataSource(basicDataSource());
+		sessionFactory.setPackagesToScan(new String[] { "com.chandrakanth.hibernate.entity" });
 		sessionFactory.setHibernateProperties(hibernateProperties());
 		return sessionFactory;
 	}
 
 	@Bean
-	public DataSource restDataSource() {
+	public DataSource basicDataSource() {
 		BasicDataSource dataSource = new BasicDataSource();
-		dataSource.setDriverClassName(env.getProperty("jdbc.driverClassName"));
-		dataSource.setUrl(env.getProperty("jdbc.url"));
-		dataSource.setUsername(env.getProperty("jdbc.user"));
-		dataSource.setPassword(env.getProperty("jdbc.pass"));
+		dataSource.setDriverClassName(env.getProperty("mysql.jdbc.driverClassName"));
+		dataSource.setUrl(env.getProperty("mysql.jdbc.url"));
+		dataSource.setUsername(env.getProperty("mysql.jdbc.user"));
+		dataSource.setPassword(env.getProperty("mysql.jdbc.pass"));
 
 		return dataSource;
 	}

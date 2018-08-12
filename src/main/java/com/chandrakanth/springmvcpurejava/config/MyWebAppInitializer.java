@@ -16,16 +16,26 @@ public class MyWebAppInitializer extends
 
    @Override
    protected Class<?>[] getRootConfigClasses() {
-      return new Class[]{MVCConfigClass.class};
+	   
+      return new Class[]{
+    		  				MVCConfigClass.class, 
+    		  				HibernateConfigClass.class
+    		  			};
    }
 
    @Override
    protected Class<?>[] getServletConfigClasses() {
-      return new Class[]{SingleServletConfiguration.class};
+      
+	   return new Class[]{
+			   				SingleServletConfiguration.class
+			   			 };
    }
 
    @Override
    protected String[] getServletMappings() {
-      return new String[]{"/"};
+      
+	   return new String[]{
+			   				"/"
+			   			  };
    }
 }
