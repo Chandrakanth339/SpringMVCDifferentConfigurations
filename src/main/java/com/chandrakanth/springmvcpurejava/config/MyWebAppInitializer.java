@@ -16,7 +16,7 @@ public class MyWebAppInitializer extends
 
    @Override
    protected Class<?>[] getRootConfigClasses() {
-      return new Class[]{RootConfiguration.class};
+      return new Class[]{MVCConfigClass.class};
    }
 
    @Override
